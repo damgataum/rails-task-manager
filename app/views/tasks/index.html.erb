@@ -2,8 +2,8 @@
 <ul>
   <% @tasks.each do |task| %>
   <li>
-    <input type="checkbox" name="completed" id="completed" <%= task.completed ? "checked" : "" %>>
-    <%= task.title %>
+    <%= task.completed ? "☑️" : "◻️" %> <%= link_to task.title, task_path(task.id)%>
   </li>
   <% end %>
 </ul>
+<%= link_to "➕ Add new task", new_task_path%>
