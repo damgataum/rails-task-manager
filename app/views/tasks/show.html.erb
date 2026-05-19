@@ -1,6 +1,6 @@
 <%= link_to "⬅️ Back to tasks list", tasks_path%>
 <h1>Title: <%= @task.title %></h1>
-<input type="checkbox" name="completed" id="completed" <%= @task.completed ? "checked" : "" %>>
 <p><%= @task.details %></p>
+<p><%= @task.completed ? "☑️" : "◻️" %> This task is completed</p>
 <%= link_to "📝 Edit this task", edit_task_path%>
 <%= link_to "🗑️ Delete this task", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
